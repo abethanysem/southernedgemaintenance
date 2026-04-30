@@ -2,84 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Southern Edge Maintenance</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #333;
-    }
-    header {
-      background: #2e7d32;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header img.logo {
-      max-width: 150px;
-      height: auto;
-      margin-bottom: 1rem;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    section {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-    .services, .contact {
-      background: white;
-      margin-bottom: 2rem;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    h2 {
-      color: #2e7d32;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #e0e0e0;
-      font-size: 0.9rem;
-    }
-    a {
-      color: #2e7d32;
-      text-decoration: none;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <header>
-    <img src="logo.png" alt="Southern Edge Logo" />
-    <h1>Southern Edge Maintenance</h1>
-    <p>Professional Lawn & Landscaping Services in South Arkansas</p>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Southern Edge Maintenance</h1>
+      <p>Tree care • Shrub maintenance • Drainage solutions • Flower Beds</p>
+      <a href="#contact" class="btn">Request Service</a>
+    </div>
   </header>
 
-  <section class="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li>🌿 Lawn Mowing & Edging</li>
-      <li>🌳 Shrub Trimming & Tree Pruning</li>
-      <li>🌸 Seasonal Flower Planting</li>
-      <li>🧼 Pressure Washing</li>
-      <li>🪵 Mulch & Pine Straw Installation</li>
-    </ul>
+  <!-- ABOUT -->
+  <section class="section">
+    <h2>What We Do</h2>
+    <p class="subtext">
+      We specialize in maintaining and restoring outdoor spaces — focusing on shrubs, trees,
+      drainage systems, and landscape structures.
+    </p>
   </section>
 
-  <section class="contact">
-    <h2>Contact Us</h2>
-    <p>📞 Call or Text: <strong>(870) 725 4873</strong></p>
-    <p>📧 Email: <a href="mailto:abethany@southernedgemaintenance.com">abethany@southernedgemaintenance.com</a></p>
-    <p>📍 Serving El Dorado & surrounding areas</p>
+  <!-- SERVICES -->
+  <section class="cards">
+    <div class="card">
+      <h3>Tree & Shrub Care</h3>
+      <p>Pruning, shaping, removal, stump grinding, and long-term health maintenance.</p>
+    </div>
+
+    <div class="card">
+      <h3>Drainage Solutions</h3>
+      <p>French drains, grading fixes, runoff correction, and water management systems.</p>
+    </div>
+
+    <div class="card">
+      <h3>Landscape Beds</h3>
+      <p>Installations, redesigns, cleanup, and seasonal maintenance of flower beds.</p>
+    </div>
+
+    <div class="card">
+      <h3>Irrigation & Ponds</h3>
+      <p>Repair and maintenance of irrigation systems, ponds, and water features.</p>
+    </div>
+  </section>
+
+  
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p class="subtext">
+      Alex Bethany (870) 725-4873 <br>
+      Southern Edge Maintenance LLC - Smackover, Arkansas 71762
+    </p>
+
+    <a class="btn" href="tel:+1-870-725-4873">Call Now</a>
   </section>
 
   <footer>
-    &copy; 2025 Southern Edge Maintenance. All rights reserved.
+    <p>© 2026 Southern Edge Maintenance LLC</p>
   </footer>
 </body>
 </html>
