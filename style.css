@@ -7,83 +7,41 @@
 
 body {
   background: linear-gradient(
-      180deg,
-      #18b547 0%,
-      #148f3d 40%,
-      #18b547 100%
+    180deg,
+    #18b547 0%,
+    #148f3d 50%,
+    #18b547 100%
   );
   color: white;
   line-height: 1.6;
 }
 
-/* HERO */
+/* =========================
+   HERO (IMAGE AS FULL DESIGN)
+========================= */
 .hero {
-  background: radial-gradient(
-      circle at top,
-      rgba(255, 255, 255, 0.12),
-      rgba(0, 0, 0, 0.15)
-    ),
-    linear-gradient(135deg, #18b547, #0f6f2e);
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-content .logo {
   width: 100%;
-  max-width: 720px;
+  background: #18b547;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+/* your actual designed image */
+.hero-image {
+  width: 100%;
+  max-width: 1200px;
   height: auto;
   display: block;
-  margin: 0 auto 15px auto;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
 }
 
-.tagline {
-  opacity: 0.95;
-  margin-bottom: 25px;
-  font-size: 1.1rem;
-}
-
-/* QUICK GRID */
-.quick-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
-  margin: 25px 0;
-}
-
-.quick-card {
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 16px;
-  border-radius: 14px;
-  backdrop-filter: blur(10px);
-  transition: 0.25s ease;
-}
-
-.quick-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.18);
-}
-
-/* SECTIONS */
-.section {
-  padding: 80px 20px;
-  max-width: 1000px;
-  margin: auto;
-  text-align: center;
-}
-
-/* CONTACT SECTION (CENTERED FIX) */
+/* =========================
+   CONTACT SECTION
+========================= */
 .contact {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 80px 20px;
   text-align: center;
@@ -92,18 +50,27 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 24px;
-  backdrop-filter: blur(10px);
 }
 
-/* BUTTON (desktop + general) */
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.subtext {
+  margin: 15px 0;
+  opacity: 0.9;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* =========================
+   CALL BUTTON (MAIN CTA)
+========================= */
 .call-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
 
   margin-top: 20px;
   padding: 14px 28px;
@@ -118,67 +85,19 @@ body {
   text-decoration: none;
 
   box-shadow:
-    0 10px 25px rgba(0, 0, 0, 0.25),
-    inset 0 0 0 1px rgba(24, 181, 71, 0.2);
+    0 10px 25px rgba(0,0,0,0.25);
 
   transition: all 0.25s ease;
-  position: relative;
-  overflow: hidden;
 }
 
 .call-btn:hover {
   transform: translateY(-3px) scale(1.03);
-  box-shadow:
-    0 14px 35px rgba(0, 0, 0, 0.35),
-    0 0 20px rgba(24, 181, 71, 0.4);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.35);
 }
 
-.call-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.6);
-  transform: skewX(-25deg);
-}
-
-.call-btn:hover::before {
-  animation: shine 0.8s ease forwards;
-}
-
-@keyframes shine {
-  100% {
-    left: 125%;
-  }
-}
-
-/* CARDS */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.12);
-  padding: 20px;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
-  transition: 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  background: rgba(255, 255, 255, 0.18);
-}
-
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer {
   text-align: center;
   padding: 40px 20px;
@@ -187,41 +106,47 @@ footer {
 }
 
 /* =========================
-   📱 MOBILE FIXES + STICKY CTA
+   MOBILE STYLES
 ========================= */
 @media (max-width: 768px) {
 
-  .hero {
-    padding: 40px 15px;
+  .hero-image {
+    width: 100%;
+    max-width: 100%;
   }
 
-  .tagline {
-    font-size: 1rem;
-  }
-
-  .section {
+  .contact {
     padding: 60px 15px;
   }
 
-  /* Sticky Call Now Button */
   .call-btn {
     width: 100%;
     max-width: 320px;
   }
+}
+
+/* =========================
+   STICKY MOBILE CALL BUTTON
+========================= */
+.sticky-call-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
 
   .sticky-call-btn {
+    display: flex;
     position: fixed;
     bottom: 18px;
     right: 18px;
 
-    background: linear-gradient(135deg, #ffffff, #dfffe6);
-    color: #18b547;
-
     padding: 14px 18px;
     border-radius: 999px;
 
+    background: linear-gradient(135deg, #ffffff, #dfffe6);
+    color: #18b547;
+
     font-weight: 800;
-    font-size: 1rem;
 
     text-decoration: none;
 
@@ -229,27 +154,16 @@ footer {
 
     z-index: 9999;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-
     animation: pulse 2.5s infinite;
   }
 
   .sticky-call-btn:active {
-    transform: scale(0.96);
+    transform: scale(0.95);
   }
 
   @keyframes pulse {
-    0% {
-      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-    }
-    50% {
-      box-shadow: 0 12px 30px rgba(24, 181, 71, 0.6);
-    }
-    100% {
-      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-    }
+    0% { box-shadow: 0 12px 30px rgba(0,0,0,0.35); }
+    50% { box-shadow: 0 12px 30px rgba(24,181,71,0.6); }
+    100% { box-shadow: 0 12px 30px rgba(0,0,0,0.35); }
   }
 }
