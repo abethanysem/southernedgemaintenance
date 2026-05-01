@@ -134,7 +134,23 @@ body {
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 30px;
+  width: 100%;
+  padding: 30px 20px;
   font-size: 0.9rem;
   opacity: 0.6;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    max-width: 95%;
+  }
+
+  .hero {
+    padding: 15px;
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+  }
 }
