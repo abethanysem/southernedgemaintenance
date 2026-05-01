@@ -6,7 +6,6 @@
 }
 
 body {
-  /* layered background for depth */
   background: linear-gradient(
       180deg,
       #18b547 0%,
@@ -32,24 +31,11 @@ body {
   overflow: hidden;
 }
 
-/* subtle glow overlay */
-.hero::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 60%);
-  transform: rotate(25deg);
-}
-
 .hero-content {
   position: relative;
   z-index: 2;
 }
 
-/* LOGO */
 .hero-content .logo {
   width: 100%;
   max-width: 720px;
@@ -59,7 +45,6 @@ body {
   filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
 }
 
-/* TAGLINE */
 .tagline {
   opacity: 0.95;
   margin-bottom: 25px;
@@ -79,7 +64,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.25);
   padding: 16px;
   border-radius: 14px;
-  text-align: left;
   backdrop-filter: blur(10px);
   transition: 0.25s ease;
 }
@@ -87,25 +71,6 @@ body {
 .quick-card:hover {
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.18);
-}
-
-/* BUTTON */
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background: linear-gradient(135deg, #ffffff, #eaffea);
-  color: #18b547;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: 0.25s ease;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 26px rgba(0,0,0,0.2);
 }
 
 /* SECTIONS */
@@ -116,21 +81,77 @@ body {
   text-align: center;
 }
 
-/* alternating section feel without breaking brand */
-.section:nth-child(even) {
-  background: rgba(255, 255, 255, 0.04);
+/* CONTACT SECTION (CENTERED FIX) */
+.contact {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 24px;
+  backdrop-filter: blur(10px);
 }
 
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+/* BUTTON (desktop + general) */
+.call-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 20px;
+  padding: 14px 28px;
+
+  background: linear-gradient(135deg, #ffffff, #dfffe6);
+  color: #18b547;
+
+  font-weight: 800;
+  font-size: 1.05rem;
+
+  border-radius: 999px;
+  text-decoration: none;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 1px rgba(24, 181, 71, 0.2);
+
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.subtext {
-  max-width: 750px;
-  margin: auto;
-  opacity: 0.9;
+.call-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(24, 181, 71, 0.4);
+}
+
+.call-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: skewX(-25deg);
+}
+
+.call-btn:hover::before {
+  animation: shine 0.8s ease forwards;
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
 }
 
 /* CARDS */
@@ -157,31 +178,19 @@ body {
   background: rgba(255, 255, 255, 0.18);
 }
 
-.card h3 {
-  margin-bottom: 10px;
-  color: white;
-}
-
-/* INFO SECTION */
-.dark {
-  background: linear-gradient(135deg, #18b547, #0f6f2e);
-  color: white;
-  border-radius: 24px;
-  padding: 60px 20px;
-}
-
 /* FOOTER */
 footer {
   text-align: center;
-  width: 100%;
   padding: 40px 20px;
   font-size: 0.9rem;
   opacity: 0.8;
-  margin: 0 auto;
 }
 
-/* MOBILE */
+/* =========================
+   📱 MOBILE FIXES + STICKY CTA
+========================= */
 @media (max-width: 768px) {
+
   .hero {
     padding: 40px 15px;
   }
@@ -192,5 +201,55 @@ footer {
 
   .section {
     padding: 60px 15px;
+  }
+
+  /* Sticky Call Now Button */
+  .call-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .sticky-call-btn {
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+
+    background: linear-gradient(135deg, #ffffff, #dfffe6);
+    color: #18b547;
+
+    padding: 14px 18px;
+    border-radius: 999px;
+
+    font-weight: 800;
+    font-size: 1rem;
+
+    text-decoration: none;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    animation: pulse 2.5s infinite;
+  }
+
+  .sticky-call-btn:active {
+    transform: scale(0.96);
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
+    50% {
+      box-shadow: 0 12px 30px rgba(24, 181, 71, 0.6);
+    }
+    100% {
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
   }
 }
